@@ -71,6 +71,13 @@ export function LandingPage() {
             href="https://pay.kirvano.com/39a8ae0c-5cce-4cdc-978a-e1847249bbe5"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => {
+              // @ts-ignore
+              if (typeof window !== "undefined" && window.fbq) {
+                // @ts-ignore
+                window.fbq('track', 'InitiateCheckout');
+              }
+            }}
             className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 w-full md:w-auto whitespace-nowrap"
           >
             <span>GARANTIR AGORA</span>

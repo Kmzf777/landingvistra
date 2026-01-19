@@ -34,6 +34,11 @@ export default function HomeClient() {
               ctaHref="#"
               onCtaClick={(e) => {
                 e.preventDefault();
+                // @ts-ignore
+                if (typeof window !== "undefined" && window.fbq) {
+                  // @ts-ignore
+                  window.fbq('track', 'ViewContent', { content_name: 'LandingPageReveal' });
+                }
                 setShowForm(true);
               }}
               align="left"
