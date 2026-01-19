@@ -4,6 +4,7 @@ import { BlurFade } from "@/components/ui/blur-fade"
 import { Check, ArrowRight } from "lucide-react"
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import { cn } from "@/lib/utils"
+import { SocialProofSection } from "@/components/social-proof-section"
 
 export function LandingPage() {
   const delayBase = 0.1
@@ -45,9 +46,9 @@ export function LandingPage() {
           <FeatureItem delay={delayBase * 2} text="Desenhada do zero — Exclusiva, memorável, alinhada com sua marca" />
           <FeatureItem delay={delayBase * 3} text="Código limpo e profissional — Rápida, responsiva, otimizada para SEO" />
           <FeatureItem delay={delayBase * 4} text="Focada em conversão — Cada elemento pensado para transformar visita em venda" />
-          <FeatureItem delay={delayBase * 5} text="Sua para sempre — Você recebe os arquivos completos, sem amarras" />
-        </div>
-      </section>
+            <FeatureItem delay={delayBase * 5} text="Sua para sempre — Seu site online para sempre com seu dominio." />
+          </div>
+        </section>
 
       {/* Objection Handling */}
       <section className="space-y-6 bg-gray-50 p-6 rounded-2xl border border-gray-200">
@@ -79,6 +80,8 @@ export function LandingPage() {
         </BlurFade>
       </section>
 
+      <SocialProofSection />
+
       {/* FAQ Section */}
       <section className="space-y-8 pt-8">
         <BlurFade delay={delayBase} inView>
@@ -109,6 +112,11 @@ export function LandingPage() {
             delay={delayBase * 6} 
             question="Como faço o pagamento?" 
             answer="Aceitamos Pix, Cartão de Credito e Debito." 
+          />
+          <FaqItem 
+            delay={delayBase * 7} 
+            question="O que vem incluso?" 
+            answer="Fazemos o site completo e incluimos um /admin com dashboard de monitoramento e personalização de URLS e suporte, além de uma janela de 24h para solicitar alterações no site" 
           />
         </div>
       </section>
