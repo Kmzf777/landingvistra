@@ -67,10 +67,15 @@ export function LandingPage() {
       {/* CTA Section */}
       <section className="flex flex-col items-center text-center space-y-6 pt-8">
         <BlurFade delay={delayBase} inView>
-          <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 w-full md:w-auto whitespace-nowrap">
+          <a 
+            href="https://pay.kirvano.com/39a8ae0c-5cce-4cdc-978a-e1847249bbe5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 w-full md:w-auto whitespace-nowrap"
+          >
             <span>GARANTIR AGORA</span>
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </button>
+          </a>
         </BlurFade>
         <BlurFade delay={delayBase * 2} inView>
           <div className="space-y-2 text-sm text-gray-600">
@@ -136,10 +141,15 @@ export function LandingPage() {
             <p className="text-xl text-gray-800 font-medium">
               É o investimento mais inteligente que você vai fazer hoje.
             </p>
-            <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 w-full whitespace-nowrap">
+            <a 
+              href="https://pay.kirvano.com/39a8ae0c-5cce-4cdc-978a-e1847249bbe5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 w-full whitespace-nowrap"
+            >
               <span>GARANTIR AGORA</span>
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
           </div>
         </BlurFade>
       </section>

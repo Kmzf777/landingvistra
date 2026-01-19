@@ -30,7 +30,7 @@ export default function HomeClient() {
                   . Sim, você leu certo. E não, não é template genérico.
                 </>
               }
-              ctaLabel="Descubrir"
+              ctaLabel="Descobrir"
               ctaHref="#"
               onCtaClick={(e) => {
                 e.preventDefault();
