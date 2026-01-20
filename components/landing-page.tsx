@@ -5,37 +5,57 @@ import { Check, ArrowRight } from "lucide-react"
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
 import { cn } from "@/lib/utils"
 import { SocialProofSection } from "@/components/social-proof-section"
+import { useEffect, useState } from "react"
+
+// Hook for mobile detection - improves performance by conditionally rendering heavy components
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile, { passive: true })
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  return isMobile
+}
 
 export function LandingPage() {
-  const delayBase = 0.1
+  const isMobile = useIsMobile()
+  // Faster animations on mobile for better perceived performance
+  const delayBase = isMobile ? 0.05 : 0.1
 
   return (
     <div className="relative flex flex-col min-h-screen w-full overflow-hidden">
-      <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
-        className={cn(
-          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-          "fixed inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
-        )}
-      />
-      <div className="relative z-10 flex flex-col w-full max-w-3xl mx-auto px-4 sm:px-6 py-8 md:py-24 space-y-12 md:space-y-24">
-        {/* Hero Section */}
-        <section className="flex flex-col gap-4">
+      {/* Only render heavy animated grid on desktop for better mobile performance */}
+      {!isMobile && (
+        <AnimatedGridPattern
+          numSquares={20}
+          maxOpacity={0.08}
+          duration={4}
+          repeatDelay={2}
+          className={cn(
+            "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+            "fixed inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+          )}
+        />
+      )}
+      <div className="relative z-10 flex flex-col w-full max-w-3xl mx-auto px-4 sm:px-6 py-6 md:py-24 space-y-8 md:space-y-24">
+        {/* Hero Section - Mobile First */}
+        <section className="flex flex-col gap-3 sm:gap-4 min-h-[70vh] sm:min-h-0 justify-center sm:justify-start">
           <BlurFade delay={delayBase} inView>
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-6xl text-black leading-tight text-balance">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-7xl text-black leading-[1.1] text-balance">
               Crie Sua Máquina de Vendas com uma Landing Page Profissional
             </h1>
           </BlurFade>
           <BlurFade delay={delayBase * 2} inView>
-            <div className="space-y-3">
-              <h2 className="text-lg sm:text-xl text-gray-800 md:text-2xl leading-relaxed font-medium">
+            <div className="space-y-4">
+              <h2 className="text-xl sm:text-2xl text-gray-800 md:text-3xl leading-relaxed font-semibold">
                 Gere sua landing page editável e pronta para vender em apenas 3 passos.
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 leading-snug">
-                <span className="font-semibold text-black">Tecnologia Vistra:</span> Você preenche um briefing inteligente e nossa automação constrói o código da sua página.
+              <p className="text-lg sm:text-xl text-gray-600 leading-snug">
+                <span className="font-bold text-black">Tecnologia Vistra:</span> Você preenche um briefing inteligente e nossa automação constrói o código da sua página.
               </p>
             </div>
           </BlurFade>
@@ -51,10 +71,10 @@ export function LandingPage() {
                   window.fbq('track', 'InitiateCheckout');
                 }
               }}
-              className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white transition-all duration-200 bg-orange-600 rounded-full hover:bg-orange-700 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] w-full md:w-auto whitespace-nowrap mt-4 animate-pulse hover:animate-none min-h-[52px] touch-manipulation"
+              className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-4 sm:py-6 text-lg sm:text-2xl font-bold text-white transition-all duration-200 bg-orange-600 rounded-2xl hover:bg-orange-700 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] w-full md:w-auto whitespace-normal text-center mt-6 animate-pulse hover:animate-none min-h-[64px] touch-manipulation shadow-orange-200 shadow-xl border-b-4 border-orange-800 active:border-b-0 active:mt-7 leading-tight"
             >
-              <span>👉 Quero Minha Máquina de Vendas</span>
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <span>👉 QUERO MINHA MÁQUINA DE VENDAS</span>
+              <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1 hidden sm:block" />
             </a>
           </BlurFade>
         </section>

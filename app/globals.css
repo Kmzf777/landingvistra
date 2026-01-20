@@ -25,6 +25,7 @@ body {
 
 /* Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -37,20 +38,46 @@ body {
 
 /* Mobile-specific performance optimizations */
 @media (max-width: 768px) {
+
   /* Reduce backdrop-blur on mobile for better GPU performance */
   .backdrop-blur-sm {
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
-  
+
   /* Disable pulse animation on mobile to save battery */
   .animate-pulse {
     animation: none !important;
   }
-  
+
   /* Improve touch targets */
-  button, a, [role="button"] {
-    min-height: 44px;
+  button,
+  a,
+  [role="button"] {
+    min-height: 48px;
+  }
+
+  /* Content visibility for off-screen sections - improves initial load */
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
+
+  /* Force GPU acceleration for smoother scrolling */
+  .relative {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* Reduce shadow complexity on mobile */
+  .shadow-xl,
+  .shadow-lg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Faster transitions on mobile */
+  * {
+    transition-duration: 150ms !important;
   }
 }
 
@@ -59,17 +86,29 @@ body {
   will-change: transform;
 }
 
+/* Touch-friendly tap highlight */
+a,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  
+
   /* Safe area for notched devices */
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom, 0);
   }
-  
+
   .safe-top {
     padding-top: env(safe-area-inset-top, 0);
+  }
+
+  /* High-performance scroll container */
+  .scroll-smooth-gpu {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 }
