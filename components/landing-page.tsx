@@ -25,14 +25,19 @@ export function LandingPage() {
         {/* Hero Section */}
         <section className="flex flex-col gap-4">
           <BlurFade delay={delayBase} inView>
-            <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl text-black leading-tight text-balance">
-              Gere sua Landing Page Profissional e Editável em 3 Passos.
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-6xl text-black leading-tight text-balance">
+              Crie Sua Máquina de Vendas com uma Landing Page Profissional
             </h1>
           </BlurFade>
           <BlurFade delay={delayBase * 2} inView>
-            <p className="text-lg sm:text-xl text-gray-800 md:text-2xl leading-relaxed">
-              Tecnologia Vistra: Você preenche o briefing inteligente, nossa automação constrói o código.
-            </p>
+            <div className="space-y-3">
+              <h2 className="text-lg sm:text-xl text-gray-800 md:text-2xl leading-relaxed font-medium">
+                Gere sua landing page editável e pronta para vender em apenas 3 passos.
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 leading-snug">
+                <span className="font-semibold text-black">Tecnologia Vistra:</span> Você preenche um briefing inteligente e nossa automação constrói o código da sua página.
+              </p>
+            </div>
           </BlurFade>
           <BlurFade delay={delayBase * 2.5} inView>
             <a
@@ -48,7 +53,7 @@ export function LandingPage() {
               }}
               className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white transition-all duration-200 bg-orange-600 rounded-full hover:bg-orange-700 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] w-full md:w-auto whitespace-nowrap mt-4 animate-pulse hover:animate-none min-h-[52px] touch-manipulation"
             >
-              <span>QUERO MINHA MÁQUINA DE VENDAS</span>
+              <span>👉 Quero Minha Máquina de Vendas</span>
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </BlurFade>
