@@ -7,7 +7,7 @@ export function SocialProofSection() {
   const delayBase = 0.1
 
   return (
-    <section className="space-y-12 py-12">
+    <section className="space-y-8 sm:space-y-12 py-8 sm:py-12">
       <div className="space-y-4 text-center">
         <BlurFade delay={delayBase} inView>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-black">
@@ -15,43 +15,47 @@ export function SocialProofSection() {
           </h2>
         </BlurFade>
         <BlurFade delay={delayBase * 2} inView>
-          <p className="mx-auto max-w-[700px] text-gray-800 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Cada landing page que sai daqui passa por um processo que agências cobram milhares para executar — mas eu automatizei o que é técnico e concentrei energia no que realmente importa: fazer seu visitante virar cliente.
+          <p className="mx-auto max-w-[700px] text-gray-800 text-base sm:text-lg md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed px-2">
+            O Sistema Vistra replica o processo que agências cobram milhares para executar — automatizando 100% da parte técnica e focando energia no que realmente importa: conversão.
           </p>
         </BlurFade>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-10 sm:space-y-16">
         {/* Item 1 */}
-        <div className="flex flex-col md:flex-row gap-8 items-center">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8 items-center">
           <BlurFade delay={delayBase} inView className="w-full md:w-1/2">
             <div className="relative aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-sm">
               <Image
                 src="/Imagem-1-vistra.jpg"
                 alt="Mapeamento da jornada do lead"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
+                priority
               />
             </div>
           </BlurFade>
           <BlurFade delay={delayBase * 2} inView className="w-full md:w-1/2">
             <div className="space-y-4">
               <p className="text-lg text-gray-800 leading-relaxed">
-                Mapeio a jornada mental do seu lead antes de desenhar qualquer coisa. A página é construída de dentro da cabeça do seu cliente para fora.
+                A tecnologia mapeia a jornada mental do seu lead antes de gerar o código. A página é construída com base em psicologia de consumo, guiando o cliente até a compra.
               </p>
             </div>
           </BlurFade>
         </div>
 
         {/* Item 2 */}
-        <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
+        <div className="flex flex-col md:flex-row-reverse gap-4 sm:gap-8 items-center">
           <BlurFade delay={delayBase} inView className="w-full md:w-1/2">
             <div className="relative aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-sm">
               <Image
                 src="/imagem-2-vistra.jpg"
                 alt="Hierarquia visual e clareza"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
+                loading="lazy"
               />
             </div>
           </BlurFade>
@@ -65,14 +69,16 @@ export function SocialProofSection() {
         </div>
 
         {/* Item 3 */}
-        <div className="flex flex-col md:flex-row gap-8 items-center">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8 items-center">
           <BlurFade delay={delayBase} inView className="w-full md:w-1/2">
             <div className="relative aspect-video overflow-hidden rounded-xl border border-gray-200 shadow-sm">
               <Image
                 src="/imagem-3-vistra.jpg"
                 alt="Copywriting e gatilhos mentais"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
+                loading="lazy"
               />
             </div>
           </BlurFade>
