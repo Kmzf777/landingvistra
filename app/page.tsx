@@ -1,5 +1,9 @@
-import HomeClient from "@/components/home-client";
+import { LandingPage } from "@/components/landing-page";
 
 export default function Home() {
-  return <HomeClient />;
+  return (
+    <main className="relative min-h-screen overflow-hidden">
+      <LandingPage />
+    </main>
+  );
 }
